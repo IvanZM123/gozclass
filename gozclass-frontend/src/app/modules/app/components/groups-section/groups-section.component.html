@@ -1,0 +1,88 @@
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="d-flex align-items-center">
+            <mat-icon>supervisor_account</mat-icon>
+            <span class="ml-3">Mis grupos</span>
+        </div>
+      </mat-panel-title>
+      <mat-panel-description>Grupos en los que estoy suscrito</mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="card border-0 bg-white">
+        <div class="card-body">
+            <div *ngIf="group" class="box-group px-2">
+                <div class="row">
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="card border-0 bg-white shadow">
+                            <div class="card-body">
+                                <div class="box-selector">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Selecciona un grupo</mat-label>
+                                        <mat-select (selectionChange)="filter($event)">
+                                            <mat-option
+                                                *ngFor="let item of groupSelectorItems"
+                                                [value]="item.id"
+                                            >{{ item.name }}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+            
+                                <div class="box-group-img text-center">
+                                    <img
+                                        style="object-fit: cover;"
+                                        class="rounded-circle"
+                                        [src]="group?.banner"
+                                        alt="Banner group"
+                                        height="150px"
+                                        width="150px"
+                                    >
+                                </div>
+                                <div class="box-group-title py-3">
+                                    <h2 class="card-title m-0">{{ group?.name }}</h2>
+                                    <p class="card-subtitle text-muted m-0">{{ group?.description }}</p>
+                                </div>
+            
+                                <div class="box-group-actions">
+                                    <button
+                                        class="bg-danger text-white w-100"
+                                        (click)="leaveGroup(group?._id)"
+                                        mat-raised-button
+                                    >Abandonar grupo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="card border-0 bg-white shadow">
+                            <div class="card-header bg-white border-0 pb-0">
+                                <div class="d-flex align-items-center py-2 text-muted">
+                                    <mat-icon>account_circle</mat-icon>
+                                    <span class="ml-3">Miembros del grupo</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Container group members -->
+                                <div class="box-group-members">
+                                    <app-general-sticker
+                                        *ngFor="let member of group?.members"
+                                        [sticker]="{
+                                            title: member.nickname,
+                                            avatar: member.avatar,
+                                            subtitle: member.email
+                                        }"
+                                    ></app-general-sticker>
+                                </div>
+                                <!-- #End container group members -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div *ngIf="!group" class="box-group-empty">
+                <p class="text-center text-muted">Aun no formas parte de un grupo.</p>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>

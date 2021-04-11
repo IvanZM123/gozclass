@@ -1,0 +1,31 @@
+<div class="card border-0 bg-white shadow">
+    <div class="card-header d-flex align-items-center text-muted border-0 bg-white py-2">
+        <mat-icon>work</mat-icon>
+        <span class="ml-2">Talleres</span>
+        <span class="spacer"></span>
+        <button routerLink="/app/workshops" mat-icon-button>
+            <mat-icon>open_in_new</mat-icon>
+        </button>
+    </div>
+    <div class="card-filter px-3">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Areas de conocimiento</mat-label>
+            <mat-select (selectionChange)="filterByKnowledgeArea($event)">
+                <mat-option
+                    *ngFor="let area of knowledgeAreas"
+                    [value]="area._id"
+                >{{ area.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="card-body pt-0">
+        <p
+            *ngIf="!items.length"
+            class="text-center text-muted"
+        >No se encuentran talleres disponibles.</p>
+        <app-general-sticker
+            *ngFor="let item of items"
+            [sticker]="item"
+        ></app-general-sticker>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<li class="list-group-item d-flex align-items-center p-2">
+    <div class="container-avatar">
+        <img
+            alt="Avatar {{ sticker.title }}"
+            style="object-fit: cover;"
+            [src]="sticker.avatar"
+            class="rounded-circle"
+            height="50px"
+            width="50px"
+        >
+    </div>
+
+    <div class="container-content pl-3">
+        <h4 class="mb-1" style="line-height: 20px;">
+            <strong>{{ sticker.title }}</strong>
+        </h4>
+        <a
+            [href]="sticker.link.url"
+            *ngIf="sticker.link"
+            class="text-purple"
+            target="_blank"
+        >{{ sticker.link.content }}</a>
+        <span
+            *ngIf="sticker.subtitle"
+            class="text-muted"
+        >{{ sticker.subtitle }}</span>
+    </div>
+    <span class="spacer"></span>
+    <div *ngIf="sticker.icon" class="container-icons">
+        <mat-icon
+            class="text-{{ sticker.color }}"
+            title="Estado del taller"
+        >{{ sticker.icon }}</mat-icon>
+    </div>
+</li>

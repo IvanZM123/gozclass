@@ -1,0 +1,44 @@
+<div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <button
+                mat-button
+                class="text-purple w-100"
+                routerLink="/auth/login"
+            >Iniciar sesion</button>
+        </div>
+        <div class="col-6">
+            <button
+                mat-button
+                class="text-primary w-100"
+                routerLink="/auth/register"
+            >Registrarse</button>
+        </div>
+    </div>
+    <h1 class="m-0">
+        <strong>{{ header.title }}</strong>
+    </h1>
+    <p class="text-muted">{{ header.subtitle }}</p>
+
+    <hr>
+    <!-- Buttons social auth -->
+    <div class="text-center">
+        <button (click)="google()" class="mx-2 border-0 bg-white rounded-circle p-3 shadow">
+            <img
+                src="/assets/icons/google.svg"
+                alt="Google icon"
+                width="25px"
+                height="25px"
+            >
+        </button>
+        <button (click)="facebook()" class="mx-2 border-0 bg-white rounded-circle p-3 shadow">
+            <img
+                src="/assets/icons/facebook.svg"
+                alt="Google icon"
+                width="25px"
+                height="25px"
+            >
+        </button>
+    </div>
+    <!-- #End button social auth -->
+</div>

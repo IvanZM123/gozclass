@@ -1,0 +1,13 @@
+.card-picture {
+    position: relative;
+}
+
+.card-picture-instructor {
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: -50px;
+    left: 30px;
+}

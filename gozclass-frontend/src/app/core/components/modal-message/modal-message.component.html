@@ -1,0 +1,33 @@
+<div mat-dialog-content>
+    <div class="text-center">
+        <img
+            style="object-fit: cover;"
+            class="rounded-circle"
+            src="{{ data.image }}"
+            *ngIf="data.image"
+            height="135px"
+            width="135px"
+            alt="Image"
+        >
+        <p class="text-muted py-3">{{ data.text }}</p>
+        <div *ngIf="data.modalConfirm" class="d-flex align-items-center">
+            <span class="spacer"></span>
+            <button
+                class="text-purple mx-2"
+                (click)="deny()"
+                mat-button
+            >Cancelar</button>
+            <button
+                class="bg-purple mx-2"
+                (click)="accept()"
+                mat-raised-button
+            >Aceptar</button>
+        </div>
+        <button
+            *ngIf="!data.modalConfirm"
+            class="bg-purple text-white mb-2"
+            mat-raised-button
+            (click)="close()"
+        >Cerrar</button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<owl-carousel-o [options]="options">
+    <ng-template
+        *ngFor="let item of creatorsContent"
+        carouselSlide
+    >
+        <div class="card-border-0 bg-white shadow">
+            <img
+                [src]="item.avatar"
+                width="100%"
+                alt="Photo."
+            >
+            <div class="card-body">
+                <h3 class="card-title m-0">{{ item.name }}</h3>
+            </div>
+        </div>
+    </ng-template> 
+</owl-carousel-o>

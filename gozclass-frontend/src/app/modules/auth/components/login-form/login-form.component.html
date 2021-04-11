@@ -1,0 +1,47 @@
+<form
+    [formGroup]="register"
+    (ngSubmit)="submit()"
+    novalidate
+>
+    <div class="form-group">
+        <label for="email" class="custom-field outlined">
+            <input
+                formControlName="email"
+                autocomplete="off"
+                data-type="email"
+                name="email"
+                id="email"
+                autofocus
+                required
+            >
+            <small class="placeholder">Correo electronico</small>
+        </label>
+        <small class="form-text text-muted">Escriba su correo electronico.</small>
+    </div>
+    <div class="form-group">
+        <label for="password" class="custom-field outlined">
+            <input
+                formControlName="password"
+                data-type="password"
+                autocomplete="off"
+                type="password"
+                name="password"
+                id="password"
+                required
+            >
+            <small class="placeholder">Contraseña</small>
+        </label>
+        <small class="form-text text-muted">Escriba su contraseña.</small>
+    </div>
+
+    <div class="form-group">
+        <mat-checkbox formControlName="stayConnected">Mantenerse conectado</mat-checkbox>
+    </div>
+
+    <button
+        class="bg-purple text-white w-100"
+        [disabled]="register.invalid"
+        mat-raised-button
+        type="submit"
+    >Iniciar sesion</button>
+</form>

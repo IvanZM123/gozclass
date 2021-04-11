@@ -1,0 +1,35 @@
+<div class="container-fluid font-purple">
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-11 col-sm-8 col-md-10 col-lg-9">
+            <div class="card bg-white border-0 shadow rounded">
+                <div class="row">
+                    <div class="col-12 col-md-6 d-none d-md-block">
+                        <div class="p-0 m-0 font-purple border-0 h-100 d-flex align-items-center">
+                            <img src="/assets/images/login.svg" alt="Home banner" width="100%">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card-header border-0 bg-white">
+                            <app-header-form
+                                [header]="{
+                                    title: 'Iniciar sesion',
+                                    subtitle: 'Inicia sesion y accede a nuestros mejores cursos.'
+                                }"
+                            ></app-header-form>
+                        </div>
+                        <div class="card-body mt-0 pt-0">
+                            <app-login-form></app-login-form>
+                        </div>
+                        <div class="card-footer border-0 bg-white pt-0">
+                            <button
+                                mat-button
+                                class="text-purple mx-2 w-100"
+                                routerLink="/auth/forgotPassword"
+                            >¿Has olvidado la contraseña?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

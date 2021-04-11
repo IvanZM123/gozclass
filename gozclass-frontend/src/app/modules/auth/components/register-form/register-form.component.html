@@ -1,0 +1,83 @@
+<form
+    [formGroup]="register"
+    (ngSubmit)="submit()"
+    novalidate
+>
+    <div class="row p-0 m-0">
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <label for="nickname" class="custom-field outlined">
+                        <input
+                            formControlName="nickname"
+                            data-type="nickname"
+                            autocomplete="off"
+                            name="nickname"
+                            id="nickname"
+                            autofocus
+                            required
+                        >
+                        <small class="placeholder">Nickname</small>
+                </label>
+                <small class="form-text text-muted">Escriba su nickname.</small>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <label for="email" class="custom-field outlined">
+                        <input
+                            formControlName="email"
+                            autocomplete="off"
+                            data-type="email"
+                            name="email"
+                            id="email"
+                            autofocus
+                            required
+                        >
+                        <small class="placeholder">Correo electronico</small>
+                </label>
+                <small class="form-text text-muted">Escriba su correo electronico.</small>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="password" class="custom-field outlined">
+                    <input
+                        formControlName="password"
+                        data-type="password"
+                        autocomplete="off"
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                    >
+                    <small class="placeholder">Contraseña</small>
+                </label>
+                <small class="form-text text-muted">Escriba su contraseña.</small>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="confirm_password" class="custom-field outlined">
+                    <input
+                        formControlName="confirmPassword"
+                        name="confirm_password"
+                        id="confirm_password"
+                        data-type="password"
+                        autocomplete="off"
+                        type="password"
+                        required
+                    >
+                    <small class="placeholder">Contraseña</small>
+                </label>
+                <small class="form-text text-muted">Escriba su contraseña.</small>
+            </div>
+        </div>
+    </div>
+
+    <button
+        [disabled]="register.invalid"
+        class="bg-blue w-100"
+        mat-raised-button
+        type="submit"
+    >Crear cuenta</button>
+</form>

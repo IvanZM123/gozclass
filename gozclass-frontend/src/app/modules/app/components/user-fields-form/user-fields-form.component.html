@@ -1,0 +1,142 @@
+<form
+    (ngSubmit)="updateUser()"
+    [formGroup]="form"
+    novalidate
+>
+    <div class="row">
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Nickname</mat-label>
+                <input
+                    formControlName="nickname"
+                    placeholder="Nickname"
+                    autocomplete="off"
+                    matInput
+                >
+                <mat-hint>Escriba su nickname</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Pais</mat-label>
+                <input
+                    formControlName="country"
+                    placeholder="Pais"
+                    autocomplete="off"
+                    matInput
+                >
+                <mat-hint>Escriba el nombre de su pais.</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Selecciones su sexo</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option value="Masculino">Masculino</mat-option>
+                  <mat-option value="Fememino">Femenino</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput formControlName="birthday" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Seleccione sus areas de conocimiento</mat-label>
+                <mat-select multiple formControlName="knowledgeAreas">
+                    <mat-option value="Frontend Developer">Frontend Developer</mat-option>
+                    <mat-option value="Backend Developer">Backend Developer</mat-option>
+                    <mat-option value="DevOps">DevOps</mat-option>
+                    <mat-option value="Video Games Developer">Video Games Developer</mat-option>
+                    <mat-option value="UI/UX">UI/UX</mat-option>
+                    <mat-option value="Database Developer">Database Developer</mat-option>
+                    <mat-option value="Cloud Computing">Cloud Computing</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Github</mat-label>
+                <input
+                    formControlName="githubLink"
+                    placeholder="Github"
+                    autocomplete="off"
+                    matInput
+                >
+                <mat-hint>Ingrese su Github.</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Twitter</mat-label>
+                <input
+                    formControlName="twitterLink"
+                    placeholder="Twitter"
+                    autocomplete="off"
+                    matInput
+                >
+                <mat-hint>Ingrese su Twitter.</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Facebook</mat-label>
+                <input
+                    formControlName="facebookLink"
+                    placeholder="Facebook"
+                    autocomplete="off"
+                    matInput
+                >
+                <mat-hint>Ingrese su Facebook.</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-lg-6 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Linkedin</mat-label>
+                <input
+                    formControlName="linkedinLink"
+                    placeholder="Linkedin"
+                    autocomplete="off"
+                    matInput
+                >
+                <mat-hint>Ingrese su Linkedin.</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 py-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Biografia</mat-label>
+                <textarea
+                    formControlName="biography"
+                    maxlength="140"
+                    matInput
+                    #input
+                ></textarea>
+                <mat-hint>Maximo {{ input.value?.length || 0 }}/140.</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="d-flex">
+        <span class="spacer"></span>
+        <button
+            mat-raised-button
+            class="bg-purple"
+        >
+            <mat-icon>save</mat-icon>
+            <span class="ml-2">Guardar</span>
+        </button>
+    </div>
+</form>

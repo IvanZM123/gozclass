@@ -1,0 +1,24 @@
+<div class="card text-center border-0 bg-white shadow rounded">
+    <div class="card-header bg-white border-0">
+      <img
+        class="d-block mx-auto"
+        [src]="badge.logo"
+        alt="Logo badge"
+        height="150px"
+        width="150px"
+      >
+    </div>
+    <div class="card-body pb-0">
+      <h1 class="card-title m-0 text-purple pb-2">
+        <strong>{{ badge.title }}</strong>
+      </h1>
+      <p class="card-subtitle text-muted m-0">{{ badge.description }}</p>
+    </div>
+    <div class="card-footer pt-0 border-0 bg-white">
+      <hr>
+      <h3 class="d-block m-0">
+        <strong>¿Como ganarlo?</strong>
+      </h3>
+      <p class="m-0">{{ badge.challenge }}</p>
+    </div>
+</div>

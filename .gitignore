@@ -1,0 +1,56 @@
+# Frontend
+
+# compiled output
+gozclass-frontend/dist
+gozclass-frontend/src/environments
+gozclass-frontend/.env
+gozclass-frontend/tmp
+gozclass-frontend/out-tsc
+
+# Only exists if Bazel was run
+gozclass-frontend/bazel-out
+
+# dependencies
+gozclass-frontend/node_modules
+
+# profiling files
+gozclass-frontend/chrome-profiler-events*.json
+gozclass-frontend/speed-measure-plugin*.json
+
+# IDEs and editors
+gozclass-frontend/.idea
+gozclass-frontend/.project
+gozclass-frontend/.classpath
+gozclass-frontend/.c9/
+gozclass-frontend/*.launch
+gozclass-frontend/.settings/
+gozclass-frontend*.sublime-workspace
+
+# IDE - VSCode
+gozclass-frontend/.vscode/*
+gozclass-frontend/!.vscode/settings.json
+gozclass-frontend/!.vscode/tasks.json
+gozclass-frontend/!.vscode/launch.json
+gozclass-frontend/!.vscode/extensions.json
+gozclass-frontend/.history/*
+
+# misc
+gozclass-frontend/.sass-cache
+gozclass-frontend/connect.lock
+gozclass-frontend/coverage
+gozclass-frontend/libpeerconnection.log
+gozclass-frontend/npm-debug.log
+gozclass-frontend/yarn-error.log
+gozclass-frontend/testem.log
+gozclass-frontend/typings
+
+# System Files
+gozclass-frontend/.DS_Store
+gozclass-frontend/Thumbs.db
+
+#Backend
+gozclass-backend/node_modules/
+
+gozclass-backend/.env
+
+gozclass-backend/dist/

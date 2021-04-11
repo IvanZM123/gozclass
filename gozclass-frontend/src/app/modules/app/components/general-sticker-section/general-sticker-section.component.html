@@ -1,0 +1,24 @@
+<div class="card border-0 bg-white shadow rounded-0">
+    <div class="card-header border-0 bg-white">
+        <div class="d-flex align-items-center text-muted">
+            <mat-icon>{{ section.header.icon }}</mat-icon>
+            <span class="px-2">{{ section.header.title }}</span>
+            <div class="span spacer"></div>
+            <button
+                [routerLink]="section.link"
+                *ngIf="section.link"
+                class="text-muted"
+                mat-icon-button
+            >
+                <mat-icon>launch</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <app-general-sticker
+            *ngFor="let sticker of section.stickers"
+            [sticker]="sticker"
+        ></app-general-sticker>
+    </div>
+</div>

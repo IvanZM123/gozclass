@@ -1,0 +1,31 @@
+<div class="container-fluid font-cyan">
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-11 col-sm-8 col-md-10">
+            <div class="card bg-white border-0 shadow rounded">
+                <div class="row">
+                    <div class="col-12 col-md-6 d-none d-lg-block">
+                        <div class="p-0 m-0 font-cyan border-0 h-100 d-flex align-items-center p-5">
+                            <img src="/assets/images/register.svg" alt="Home banner" width="100%">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card-header border-0 bg-white">
+                            <app-header-form
+                                [header]="{
+                                    title: 'Crear una cuenta',
+                                    subtitle: 'Crea una cuenta, y embarcate en una espectacular aventura.'
+                                }"
+                            ></app-header-form>
+                        </div>
+                        <div class="card-body mt-0 pt-0">
+                            <app-register-form></app-register-form>
+                        </div>
+                        <div class="card-footer pt-0 border-0 bg-white">
+                            Al registrate esta aceptando los <a href="/terms" target="_blank" class="text-purple">Terminos y condiciones</a> de uso, asi como la <a href="/privacy" target="_blank" class="text-purple">Politicas de privacidad y proteccion de datos</a> de Team Angular 15.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

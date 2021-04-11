@@ -1,0 +1,26 @@
+<div class="card border-0 bg-white shadow">
+    <div class="card-picture">
+        <img
+            style="object-fit: cover;"
+            [src]="workshop.picture"
+            alt="Course picture"
+            height="150px"
+            width="100%"
+        >
+
+        <div class="card-picture-instructor">
+            <img
+                [src]="workshop.instructor.avatar"
+                alt="Picture instructor"
+                class="rounded-circle"
+                width="100%"
+            >
+        </div>
+    </div>
+    <div class="card-body pt-5 mt-3">
+        <h2 class="card-title ">
+            <strong>{{ workshop.title }}</strong>
+        </h2>
+        <p class="card-subtitle text-muted">{{ workshop.description }}</p>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="card border-0 bg-white shadow">
+    <div class="container-picture">
+        <img
+            src="https://source.unsplash.com/random/350x125"
+            style="object-fit: cover;"
+            height="125px"
+            width="100%"
+            alt="Banner"
+        >
+        <div class="container-avatar">
+            <img
+                alt="Picture content creator"
+                [src]="contentCreator.avatar"
+                class="rounded-circle"
+                height="100%"
+                width="100%"
+            >
+        </div>
+    </div>
+    <div class="card-body text-center">
+        <h2 class="card-title m-0">{{ contentCreator.name }}</h2>
+        <p class="card-subtitle text-muted">{{ contentCreator.profession }}</p>
+    </div>
+    <div class="card-footer pt-0 border-0 bg-white">
+        <a
+            class="bg-purple d-block text-white text-decoration-none"
+            [href]="contentCreator.socialMedia"
+            mat-raised-button
+            target="_blank"
+        >Sigueme</a>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div>
+    <button mat-flat-button [matMenuTriggerFor]="menu">
+        <img
+            style="object-fit: cover;"
+            class="rounded-circle"
+            [src]="user.avatar"
+            alt="User picture"
+            height="25px"
+            width="25px"
+        >
+        <span class="ml-2 mr-3">{{ user.nickname }}</span>
+        <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button routerLink="/app/profile" mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>Mi perfil</span>
+        </button>
+        <button (click)="signOut()" mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar sesion</span>
+        </button>
+    </mat-menu>
+</div>

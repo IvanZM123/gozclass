@@ -1,0 +1,73 @@
+.container-images {
+    width: 100%;
+    position: relative;
+}
+
+.container-menu {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.container-banner {
+    height: 250px;
+}
+
+.container-banner img::before {
+    background: rgba(0,0,0, .4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.container-avatar {
+    position: absolute;
+    border-radius: 50%;
+    bottom: -40px;
+    padding: 3px;
+    left: 25px;
+    width: 120px;
+    height: 120px;
+    border: 5px solid white;
+}
+
+#edit-avatar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.container-social-media {
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+}
+
+.container-avatar img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container-text h1 {
+    font-size: 25px;
+}
+
+@media screen and (min-width: 768px) {
+    .container-avatar {
+        height: 125px;
+        width: 125px;
+    }
+
+    .container-banner {
+        height: 200px;
+    }
+}

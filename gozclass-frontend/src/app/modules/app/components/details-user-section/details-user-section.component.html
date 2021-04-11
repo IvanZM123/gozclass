@@ -1,0 +1,15 @@
+<div class="card border-0 bg-white shadow">
+    <div class="card-header text-muted d-flex align-items-center w-100 border-0 bg-white">
+        <mat-icon>{{ details.header.icon }}</mat-icon>
+        <p class="m-0 p-0 px-2">{{ details.header.title }}</p>
+    </div>
+    <div class="card-body pt-0 text-muted">
+        <p
+            *ngFor="let item of details.items"
+            class="m-0 py-1 d-flex align-items-center w-100"
+        >
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span class="px-2">{{ item.text ? item.text : "" }}</span>
+        </p>
+    </div>
+</div>

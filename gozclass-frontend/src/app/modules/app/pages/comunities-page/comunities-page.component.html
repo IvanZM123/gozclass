@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row justify-content-sm-center justify-content-md-start">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-2" *ngFor="let community of communities">
+            <div class="card border-0 shadow">
+                <div class="card-body p-0">
+                    <img
+                        style="object-fit: cover;"
+                        [src]="community.banner"
+                        alt="Community banner"
+                        height="250px"
+                        width="100%"
+                    >
+                    <div class="content text-white p-3">
+                        <h2 class="m-0">
+                            <strong>{{ community.title }}</strong>
+                        </h2>
+                        <p class="m-0">{{ community.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

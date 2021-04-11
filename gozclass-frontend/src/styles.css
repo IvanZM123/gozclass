@@ -1,0 +1,143 @@
+html, body {
+    height: 100%;;
+    
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+/* Fonts */
+.font-purple {
+    background: #6a3093;
+    background: -webkit-linear-gradient(to right, #a044ff, #6a3093);
+    background: linear-gradient(to right, #a044ff, #6a3093);
+}
+
+.font-cyan {
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+}
+
+.bg-purple {
+    background-color: #7f3bb2 !important;
+    color: white;
+}
+
+.text-purple {
+    color: #7f3bb2 !important;
+}
+
+.bg-blue {
+    background-color: #009ef5;
+    color: white;
+}
+
+.bg-accent {
+    background-color: #eb3b5a !important;
+    color: white;
+}
+
+.text-accent {
+    color: #eb3b5a;
+}
+
+/* Fields */
+.custom-field {
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.custom-field input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+    padding: 16px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    left: 12px;
+    font-size: 16px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    transition: top 0.3s ease;
+}
+
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+    top: 10px;
+    font-size: 12px;
+    color: #673ab7;
+}
+
+.custom-field.outlined input {
+    background: none;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.custom-field.outlined input:valid,
+.custom-field.outlined input:focus {
+    border-color: #673ab7;
+    transition-delay: 0.1s;
+}
+
+.custom-field.outlined input:focus + .placeholder,
+.custom-field.outlined input:valid + .placeholder {
+    left: 8px;
+    padding: 0px 5px;
+}
+
+.custom-field.outlined input:valid + .placeholder,
+.custom-field.outlined input:focus + .placeholder {
+    top: 21px;
+    background: #fff;
+}
+
+/** error */
+.custom-field.error {
+    color: #DD5E5D;
+}
+
+.custom-field.error input:valid,
+.custom-field.error input:focus {
+    border-color: #DD5E5D;
+    transition-delay: 0.1s;
+}
+
+.custom-field.error input:valid + .placeholder,
+.custom-field.error input:focus + .placeholder {
+    color: #DD5E5D;
+}
+
+/* success */
+.custom-field.success {
+    color: #009432;
+}
+
+.custom-field.success input:valid,
+.custom-field.success input:focus {
+    border-color: #009432;
+    transition-delay: 0.1s;
+}
+
+.custom-field.success input:valid + .placeholder,
+.custom-field.success input:focus + .placeholder {
+    color: #009432;
+}
