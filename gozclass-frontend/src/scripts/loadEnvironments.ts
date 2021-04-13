@@ -1,4 +1,4 @@
-const { writeFile } = require("fs");
+const { writeFile, existsSync, mkdirSync } = require("fs");
 const { resolve } = require("path");
 const { argv } = require("yargs");
 const dotenv = require("dotenv");
@@ -9,10 +9,11 @@ const environment = argv.environments;
 
 const isProduction = environment === "production";
 
-const directory = isProduction
+const directory: string = isProduction
 ? "../environments/environment.prod.ts"
 : "../environments/environment.ts";
-const targetPath = resolve(__dirname, directory);
+const folder: string = resolve(__dirname, "../environments");
+const targetPath: string = resolve(__dirname, directory);
 
 const environmentContent = `
 export const environment = {
@@ -23,7 +24,17 @@ export const environment = {
 }
 `;
 
-writeFile(targetPath, environmentContent, (error) => {
-    if (error) return console.error(error);
-    console.log(`Se agrego un archivo a la ruta ${ targetPath }`);
-});
+function generateFile(path: string, data: string): void {
+    writeFile(path, data, err => {
+        if (err) return console.error(err);
+        console.log(`A file has been generated in the path: ${ path }`);
+    });
+}
+
+(()=> {
+    if (!existsSync(folder)) {
+        mkdirSync(folder);
+        return generateFile(targetPath, environmentContent);
+    }
+    generateFile(targetPath, environmentContent);
+})();
