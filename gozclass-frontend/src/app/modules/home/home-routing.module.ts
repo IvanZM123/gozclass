@@ -1,5 +1,5 @@
 // Imports modules.
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Route } from "@angular/router";
 import { NgModule } from "@angular/core";
 
 // Import layout
@@ -10,7 +10,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { TermsPageComponent } from "./pages/terms-page/terms-page.component";
 import { PrivacyPageComponent } from "./pages/privacy-page/privacy-page.component";
 
-const routes: Routes = [
+const routes: Array<Route> = [
     {
         path: "",
         component: HomeLayoutComponent,

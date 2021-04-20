@@ -1,6 +1,6 @@
 // Import module.
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Route } from "@angular/router";
 import { AuthGuard } from "src/app/core/guards/auth.guard";
 
 // Import layout.
@@ -14,7 +14,7 @@ import { ProfilePageComponent } from "./pages/profile-page/profile-page.componen
 import { UserSettingsPageComponent } from "./pages/user-settings-page/user-settings-page.component";
 import { WorkshopsPageComponent } from "./pages/workshops-page/workshops-page.component";
 
-const routes: Routes = [
+const routes: Array<Route> = [
     {
         path: "",
         component: AppLayoutComponent,

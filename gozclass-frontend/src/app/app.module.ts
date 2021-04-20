@@ -35,6 +35,7 @@ import { CommunitiesService } from './core/services/communities/communities.serv
 import { AuthInterceptorService } from './core/interceptors/auth-interceptor.service';
 import { KnowledgeAreaService } from './core/services/knowledgeArea/knowledge-area.service';
 import { ContentCreatorsService } from './core/services/contentCreators/content-creators.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -58,6 +59,10 @@ import { ContentCreatorsService } from './core/services/contentCreators/content-
     BrowserAnimationsModule
   ],
   providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

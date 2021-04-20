@@ -5,20 +5,20 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("../modules/home/home.module").then(module => module.HomeModule)
+    loadChildren: () => import("src/app/modules/home/home.module").then(module => module.HomeModule)
   },
   {
     path: "auth",
-    loadChildren: () => import("../modules/auth/auth.module").then(module => module.AuthModule)
+    loadChildren: () => import("src/app/modules/auth/auth.module").then(module => module.AuthModule)
   },
   {
     path: "app",
-    loadChildren: () => import("../modules/app/app.module").then(module => module.AppModule)
+    loadChildren: () => import("src/app/modules/app/app.module").then(module => module.AppModule)
   }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, { useHash: true }) ],
+  imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

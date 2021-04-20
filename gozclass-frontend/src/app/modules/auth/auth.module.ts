@@ -1,9 +1,13 @@
 // Import module.
+import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 // Import routing
 import { AuthRouting } from "./auth-routing.module";
+
+// Auth layout
+import { AuthLayoutComponent } from './layouts/auth-layout.component';
 
 // Imports pages.
 import { ForgotPasswordPageComponent } from "./pages/forgot-password-page/forgot-password-page.component";
@@ -17,10 +21,10 @@ import { LoginFormComponent } from "./components/login-form/login-form.component
 
 // Import material
 import { AngularMaterial } from "src/app/core/material/AngularMaterial";
-import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
+        AuthLayoutComponent,
         ForgotPasswordPageComponent,
         RegisterPageComponent,
         LoginPageComponent,
@@ -29,10 +33,10 @@ import { ReactiveFormsModule } from "@angular/forms";
         HeaderFormComponent
     ],
     imports: [
+        CommonModule,
+        AuthRouting,
         ReactiveFormsModule,
         AngularMaterial,
-        CommonModule,
-        AuthRouting
     ]
 })
 export class AuthModule {}
